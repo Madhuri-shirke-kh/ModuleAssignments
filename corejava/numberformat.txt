@@ -1,0 +1,9 @@
+NumberFormat us = NumberFormat.getCurrencyInstance();
+        us.setMaximumFractionDigits(2);
+        NumberFormat india = NumberFormat.getCurrencyInstance(new Locale("en","in"));
+        india.setMaximumFractionDigits(2);
+        NumberFormat china = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        china.setMaximumFractionDigits(2);
+        NumberFormat france = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        france.setMaximumFractionDigits(2);
+        
