@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Callback Exercise</title>
+</head>
+<body>
+    <h1>JavaScript forEachElement Exercise</h1>
+    <button onclick="runExercise()">Run Exercise</button>
+
+    <script>
+        function forEachElement(arr, callback) {
+            for (let i = 0; i < arr.length; i++) {
+                callback(arr[i], i);
+            }
+        }
+
+        function runExercise() {
+            const array = [1, 2, 3, 4, 5];
+            forEachElement(array, (element, index) => {
+                const result = element * 2;
+                console.log(`Index: ${index}, Result: ${result}`);
+            });
+        }
+        console.log(`Index: ${index}, Result: ${result}`);
+    </script>
+</body>
+</html>

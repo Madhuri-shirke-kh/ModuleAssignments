@@ -1,0 +1,235 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" href="favicon.ico">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Main Content */
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* About Us Section */
+        .about-section {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .about-section p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Team Section */
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            flex: 1 1 200px;
+            max-width: 200px;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Mission Statement */
+        .mission-statement {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+        }
+
+        .mission-statement h2 {
+            color: #4CAF50;
+            font-size: 1.5em;
+        }
+
+        .mission-statement p {
+            color: #333;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* Social Media Links */
+        .social {
+            margin-top: 20px;
+        }
+
+        .social a {
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .social a:hover {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">MyWebsite</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>About Us</h1>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <p>Welcome to our website! We are a team of passionate individuals committed to delivering exceptional services and solutions to our clients. Our journey began with a simple idea, and today we are proud to have a diverse team working together towards a shared vision.</p>
+        </div>
+
+        <!-- Team Section -->
+        <h2>Meet Our Team</h2>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="team1.jpg" alt="Team Member 1">
+                <h3>John Doe</h3>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="team2.jpg" alt="Team Member 2">
+                <h3>Jane Smith</h3>
+                <p>Head of Marketing</p>
+            </div>
+            <div class="team-member">
+                <img src="team3.jpg" alt="Team Member 3">
+                <h3>Mike Johnson</h3>
+                <p>Lead Developer</p>
+            </div>
+        </div>
+
+        <!-- Mission Statement -->
+        <div class="mission-statement">
+            <h2>Our Mission</h2>
+            <p>Our mission is to create innovative and impactful solutions that make a difference in the lives of our customers and communities. We believe in the power of collaboration, integrity, and excellence in everything we do.</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social">
+            <a href="#" target="_blank">&#xf082; Facebook</a>
+            <a href="#" target="_blank">&#xf16d; Instagram</a>
+            <a href="#" target="_blank">&#xf099; Twitter</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

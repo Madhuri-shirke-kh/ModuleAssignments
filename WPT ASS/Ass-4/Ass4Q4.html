@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulate Network Request with Error Handling</title>
+</head>
+<body>
+    <h1>Simulate Network Request with Error Handling</h1>
+    <button onclick="makeNetworkRequest()">Make Network Request</button>
+
+    <script>
+        // Define the fetchData function with error handling
+        function fetchData(url, callback) {
+            console.log(`Fetching data from ${url}...`);
+            
+            // Simulate network delay
+            setTimeout(() => {
+                const isError = Math.random() < 0.5; // 50% chance of error
+                
+                if (isError) {
+                    const errorMessage = "Network error: Unable to fetch data.";
+                    callback(errorMessage, null);
+                } else {
+                    const response = `Response from ${url}`;
+                    callback(null, response);
+                }
+            }, 2000); // 2-second delay
+        }
+
+        // Function to initiate the network request
+        function makeNetworkRequest() {
+            const url = "https://example.com/api/data";
+            
+            fetchData(url, (error, response) => {
+                if (error) {
+                    console.error("Error received:", error);
+                } else {
+                    console.log("Response received:", response);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

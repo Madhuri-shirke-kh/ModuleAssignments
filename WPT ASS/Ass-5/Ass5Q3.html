@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Exercise: Then-Catch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            transition: background-color 0.5s;
+        }
+        #message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .loading {
+            color: #FFA500;
+        }
+        .success {
+            color: #28a745;
+        }
+        .error {
+            color: #dc3545;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="message">Click the button to fetch data.</div>
+        <button id="fetchButton">Fetch Data</button>
+    </div>
+
+    <script>
+        const messageElement = document.getElementById("message");
+        const fetchButton = document.getElementById("fetchButton");
+
+        // Function to simulate an asynchronous operation
+        function fetchData() {
+            messageElement.textContent = "Fetching data...";
+            messageElement.className = "loading";
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const isSuccess = Math.random() > 0.5; // Random success or failure
+                    if (isSuccess) {
+                        resolve("Data fetched successfully!");
+                    } else {
+                        reject("Failed to fetch data.");
+                    }
+                }, 2000); // Simulating a 2-second fetch time
+            });
+        }
+
+        // Event listener for button click
+        fetchButton.addEventListener("click", () => {
+            fetchData()
+                .then((successMessage) => {
+                    messageElement.textContent = successMessage;
+                    messageElement.className = "success";
+                    document.body.style.backgroundColor = "#d4edda"; // Green background
+                })
+                .catch((errorMessage) => {
+                    messageElement.textContent = errorMessage;
+                    messageElement.className = "error";
+                    document.body.style.backgroundColor = "#f8d7da"; // Red background
+                });
+        });
+    </script>
+</body>
+</html>

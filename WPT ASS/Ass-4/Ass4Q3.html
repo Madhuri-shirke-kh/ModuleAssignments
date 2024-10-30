@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulate Network Request</title>
+</head>
+<body>
+    <h1>Simulate Network Request with Delay</h1>
+    <button onclick="makeNetworkRequest()">Make Network Request</button>
+
+    <script>
+        // Define the fetchData function
+        function fetchData(url, callback) {
+            console.log(`Fetching data from ${url}...`);
+            
+            // Simulate network delay
+            setTimeout(() => {
+                const response = `Response from ${url}`;
+                callback(response);
+            }, 2000); // 2-second delay
+        }
+
+        // Function to initiate the network request
+        function makeNetworkRequest() {
+            const url = "https://example.com/api/data";
+            
+            fetchData(url, (response) => {
+                console.log("Response received:", response);
+            });
+        }
+    </script>
+</body>
+</html>

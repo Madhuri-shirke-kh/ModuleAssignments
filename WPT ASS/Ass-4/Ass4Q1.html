@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Uppercase Conversion</title>
+</head>
+<body>
+
+  <h1>Convert String to Uppercase</h1>
+
+  <!-- Input field to take user input -->
+  <input type="text" id="inputString" placeholder="Enter a string" />
+
+  <!-- Button to trigger the processData function -->
+  <button onclick="processInput()">Convert to Uppercase</button>
+
+  <!-- Area to display the result -->
+  <p id="output"></p>
+
+  <script>
+    // Define the toUpperCase function as a callback
+    function toUpperCase(str) {
+      return str.toUpperCase();
+    }
+
+    // Define the processData function that takes a string and a callback function
+    function processData(input, callback) {
+      return callback(input); // Call the callback with the input string
+    }
+
+    // Function to get input, process it, and display the result
+    function processInput() {
+      const inputString = document.getElementById("inputString").value; // Get input value
+      const result = processData(inputString, toUpperCase); // Convert input to uppercase
+      document.getElementById("output").textContent = `Uppercase: ${result}`; // Display result
+    }
+  </script>
+
+</body>
+</html>

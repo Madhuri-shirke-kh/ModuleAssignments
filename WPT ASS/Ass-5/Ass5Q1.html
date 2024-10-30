@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Execution Context Visualized</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    h1 { color: #4CAF50; }
+    .container { display: flex; flex-direction: column; align-items: center; }
+    .call-stack, .code-block { border: 2px solid #4CAF50; padding: 20px; width: 300px; margin: 10px; }
+    .call-stack { background-color: #f9f9f9; }
+    .code-block { background-color: #f0f0ff; }
+    .stack-item { padding: 10px; background-color: #e0f7fa; border: 1px solid #4CAF50; margin: 5px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Execution Context Visualized</h1>
+  <div class="container">
+    <div class="call-stack">
+      <h2>Call Stack</h2>
+      <div id="stack">
+        <!-- Call stack items will be added here dynamically -->
+      </div>
+    </div>
+
+    <div class="code-block">
+      <h2>Code</h2>
+      <pre>
+function first() {
+  addToStack('first');
+  second();
+  removeFromStack();
+}
+
+function second() {
+  addToStack('second');
+  third();
+  removeFromStack();
+}
+
+function third() {
+  addToStack('third');
+  removeFromStack();
+}
+
+first();
+      </pre>
+      <button onclick="runCode()">Run Code</button>
+    </div>
+  </div>
+
+  <script>
+    const stack = document.getElementById('stack');
+
+    function addToStack(funcName) {
+      const stackItem = document.createElement('div');
+      stackItem.className = 'stack-item';
+      stackItem.textContent = funcName;
+      stack.appendChild(stackItem);
+    }
+
+    function removeFromStack() {
+      stack.removeChild(stack.lastChild);
+    }
+
+    function runCode() {
+      addToStack('Global Execution Context');
+      first();
+      removeFromStack();
+      alert('Execution Complete!');
+    }
+
+    function first() {
+      addToStack('first');
+      second();
+      removeFromStack();
+    }
+
+    function second() {
+      addToStack('second');
+      third();
+      removeFromStack();
+    }
+
+    function third() {
+      addToStack('third');
+      removeFromStack();
+    }
+  </script>
+</body>
+</html>

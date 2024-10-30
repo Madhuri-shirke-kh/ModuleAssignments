@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" href="favicon.ico">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Main Content */
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        /* Social Media Links */
+        .social {
+            margin-top: 20px;
+        }
+
+        .social a {
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .social a:hover {
+            color: #4CAF50;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">MyWebsite</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <p><strong>Email:</strong> email@example.com</p>
+            <p><strong>Phone:</strong> +1 (234) 567-890</p>
+            <p><strong>Address:</strong> 1234 Street Name, City, Country</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social">
+            <a href="#" target="_blank">&#xf082; Facebook</a>
+            <a href="#" target="_blank">&#xf16d; Instagram</a>
+            <a href="#" target="_blank">&#xf099; Twitter</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

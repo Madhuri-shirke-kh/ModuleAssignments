@@ -1,0 +1,272 @@
+<html>
+    <head>
+        <title> Home page </title>
+        <link rel="icon" type="image/x-icon" href="C:\Users\madhu\AppData\Local\Temp\0e13a8d3-1240-4b21-8caa-a6ff2156d144_HatchfulExport-All.zip.144\logo_transparent.png">
+        
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .a1{
+            color: red;
+            text-decoration:indigo;
+            align-content: initial;
+            
+        }
+        li{
+            display: inline;
+        }
+              
+* {
+  box-sizing: border-box;
+}body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transition: background-color 0.3s;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Menu Icon */
+        .menu-icon {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Page Content */
+        .content {
+            margin-top: 60px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        h1, p {
+            margin-bottom: 20px;
+        }
+        footer {
+  background-color: #777;
+  padding:200px;
+  text-align:end;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                color: white;
+            }
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        footer .social a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+div {
+  width: 30%;
+  display: inline-block;
+  background-color: aqua;
+}
+</style>
+
+</head>
+
+     <body>
+        <header>
+            <nav> <h2>Home Page</h2> </nav>
+        </header>
+               <nav>
+        <ul class="a1">
+            <li><a href="Home.html" target="-blank">Home</a></li>
+            <li><a href="About-us.html" target="_blank">About us</a></li>
+            <li><a href="Sign-in.html" target="_blank">Sign In</a></li>
+            <li><a href="Sign-up.html" target="_blank">Sign up</a></li>
+            <li> <a href="contactus.html" target="_blank">contact-us</a></li>
+          </ul>
+               </nav>
+               
+               
+          </body>
+         
+        <footer>Copyright@gmail.com contact-us:xxxxxxxx</footer>
+        
+</html>

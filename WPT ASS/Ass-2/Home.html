@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      padding: 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #0056b3;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    nav a:hover {
+      background-color: #004494;
+      border-radius: 4px;
+    }
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      text-align: center;
+    }
+    .greeting {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e9f7ef;
+      border-radius: 4px;
+      color: #28a745;
+      display: none;
+    }
+    footer {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+    }
+    .greet-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .greet-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Welcome to Our Website</h1>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2>Explore Our Features</h2>
+    <p>
+      This is a simple home page designed to introduce users to our site. Explore the links above to learn more.
+    </p>
+    <p>
+      Enter your name and click the button below to receive a personalized greeting!
+    </p>
+
+    <!-- Input Field and Greeting Button -->
+    <input type="text" id="username" placeholder="Enter your name">
+    <button class="greet-btn" onclick="displayGreeting()">Greet Me</button>
+
+    <!-- Greeting Output -->
+    <div class="greeting" id="greeting"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Our Website. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function displayGreeting() {
+      const username = document.getElementById("username").value;
+      const greetingDiv = document.getElementById("greeting");
+
+      if (username) {
+        greetingDiv.style.display = "block";
+        greetingDiv.innerHTML = `<p>Hello, <strong>${username}</strong>! Welcome to our website.</p>`;
+      } else {
+        greetingDiv.style.display = "block";
+        greetingDiv.innerHTML = "<p>Please enter your name to receive a greeting.</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>

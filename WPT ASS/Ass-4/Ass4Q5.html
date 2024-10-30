@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch and Process Data</title>
+</head>
+<body>
+  <h1>Fetch and Process Data Example</h1>
+
+  <script>
+    // Simulating fetching data with a delay
+    function fetchData(callback) {
+      console.log("Fetching data...");
+      setTimeout(() => {
+        const data = { id: 1, name: "Sample Data" }; // Sample data
+        console.log("Data fetched:", data);
+        callback(data); // Call the callback with the fetched data
+      }, 1000); // Simulate a 1-second delay
+    }
+
+    // Simulating processing the fetched data
+    function processData(data, callback) {
+      console.log("Processing data...");
+      setTimeout(() => {
+        data.processed = true; // Modifying the data
+        console.log("Processed data:", data);
+        callback(data); // Call the callback with the processed data
+      }, 1000); // Simulate a 1-second delay
+    }
+
+    // Initiating the fetch and process sequence using nested callbacks
+    fetchData((fetchedData) => {
+      processData(fetchedData, (processedData) => {
+        console.log("Data fully processed:", processedData);
+      });
+    });
+  </script>
+</body>
+</html>

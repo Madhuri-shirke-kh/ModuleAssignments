@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Bold Words</title>
+    <style>
+        /* Define the default and highlight colors for bold text */
+        b {
+            color: black;
+            transition: color 0.3s;
+        }
+        .highlight {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Hover over the link to highlight bold words</h2>
+    
+    <!-- Link to trigger highlight -->
+    <a href="#" onmouseover="highlightBoldWords()" onmouseout="removeHighlight()">Highlight Bold Words</a>
+
+    <!--Sample link and text -->
+    [On mouse over here bold words of the following paragraph will be highlighted]
+    <p>
+        <b>We</b>have just started <b>this</b>section for the users(<b>beginer</b> to intermediate)who <b>want</b> to work with various Javascript <b>Problems</b> and write scripts online to <b>test</b>their Javascript <b>skill</b>.
+    </p>
+
+    <script>
+        // Function to highlight bold words
+        function highlightBoldWords() {
+            // Get all bold (<b>) elements in the document
+            const boldWords = document.querySelectorAll("b");
+            
+            // Add the 'highlight' class to each bold element
+            boldWords.forEach(word => {
+                word.classList.add("highlight");
+            });
+        }
+
+        // Function to remove the highlight
+        function removeHighlight() {
+            // Get all bold (<b>) elements in the document
+            const boldWords = document.querySelectorAll("b");
+            
+            // Remove the 'highlight' class from each bold element
+            boldWords.forEach(word => {
+                word.classList.remove("highlight");
+            });
+        }
+    </script>
+
+</body>
+</html>
