@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closure Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Closure Example</h1>
+
+<button onclick="executeClosure()">Execute Closure</button>
+
+<p id="closure-result">Result: </p>
+
+<script>
+  // Function that returns another function demonstrating closure
+  function outerFunction(greeting) {
+    return function innerFunction(name) {
+      return `${greeting}, ${name}!`;
+    };
+  }
+
+  // Function to execute the closure
+  function executeClosure() {
+    const greet = outerFunction("Hello"); // Create a closure with greeting
+    const result = greet("Alice"); // Call the inner function with a name
+
+    // Display the result
+    document.getElementById("closure-result").textContent = `Result: ${result}`;
+  }
+</script>
+
+</body>
+</html>

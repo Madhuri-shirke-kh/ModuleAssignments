@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Promise Example</h1>
+
+<button onclick="runPromise()">Run Promise</button>
+
+<p id="message">Message: </p>
+
+<script>
+  // Function that creates a promise that resolves with a message after 3 seconds
+  function createPromise() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("Promise has been resolved after 3 seconds!");
+      }, 3000);
+    });
+  }
+
+  // Function to run the promise and display the message
+  function runPromise() {
+    // Run the promise and handle the resolved value
+    createPromise().then((resolvedMessage) => {
+      document.getElementById("message").textContent = `Message: ${resolvedMessage}`;
+    });
+  }
+</script>
+
+</body>
+</html>

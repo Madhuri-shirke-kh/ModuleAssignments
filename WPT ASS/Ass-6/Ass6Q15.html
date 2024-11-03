@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Array of Numbers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Process Array of Numbers</h1>
+
+<button onclick="processNumbers()">Calculate Total</button>
+
+<p id="total">Total: </p>
+
+<script>
+  // Function to process the array of numbers
+  function processArray(numbers) {
+    return numbers
+      .filter(num => num % 2 === 0) // Filter even numbers
+      .map(num => num * 2)          // Double the even numbers
+      .reduce((total, num) => total + num, 0); // Sum the doubled numbers
+  }
+
+  // Function to execute the processing and display the total
+  function processNumbers() {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Example array
+    const total = processArray(numbers); // Process the numbers
+    document.getElementById("total").textContent = `Total: ${total}`; // Display the total
+  }
+</script>
+
+</body>
+</html>

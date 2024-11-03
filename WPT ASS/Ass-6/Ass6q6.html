@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Lengths</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Name Lengths</h1>
+
+<button onclick="showNameLengths()">Show Name Lengths</button>
+
+<p id="name-lengths">Name Lengths:</p>
+
+<script>
+  // Array of names
+  const names = ["Alice", "Bob", "Charlotte", "David"];
+
+  // Function to create a new array with the lengths of each name
+  function showNameLengths() {
+    // Use map to create a new array with name lengths
+    const nameLengths = names.map(name => name.length);
+
+    // Display the lengths of each name
+    document.getElementById("name-lengths").textContent = `Name Lengths: ${nameLengths.join(", ")}`;
+  }
+</script>
+
+</body>
+</html>

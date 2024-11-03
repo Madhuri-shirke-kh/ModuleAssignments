@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback with Delay</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      width: 80%;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Execute Callback After Delay</h1>
+
+<label for="delay">Enter delay in milliseconds:</label>
+<input type="number" id="delay" placeholder="e.g., 2000">
+
+<label for="message">Enter a message:</label>
+<input type="text" id="message" placeholder="e.g., Hello World!">
+
+<button onclick="executeCallbackAfterDelay()">Execute</button>
+
+<p id="result">Result: </p>
+
+<script>
+  // Function that accepts a callback and executes it after a delay
+  function executeAfterDelay(callback, delay) {
+    setTimeout(callback, delay);
+  }
+
+  // Function to get input values and execute the callback
+  function executeCallbackAfterDelay() {
+    const delay = parseInt(document.getElementById("delay").value, 10);
+    const message = document.getElementById("message").value;
+
+    // Validate input
+    if (isNaN(delay) || delay < 0) {
+      document.getElementById("result").textContent = "Please enter a valid delay.";
+      return;
+    }
+
+    // Define the callback function to display the message
+    const callback = () => {
+      document.getElementById("result").textContent = `Result: ${message}`;
+    };
+
+    // Execute the callback after the specified delay
+    executeAfterDelay(callback, delay);
+  }
+</script>
+
+</body>
+</html>

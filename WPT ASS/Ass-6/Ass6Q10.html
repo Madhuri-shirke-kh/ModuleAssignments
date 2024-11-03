@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merge Fruit Arrays</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Merge Fruit Arrays</h1>
+
+<button onclick="mergeFruitArrays()">Merge Fruit Arrays</button>
+
+<p id="merged-fruits">Merged Fruits: </p>
+
+<script>
+  // Two arrays of fruits
+  const fruits1 = ['Apple', 'Banana', 'Cherry'];
+  const fruits2 = ['Mango', 'Orange', 'Pineapple'];
+
+  // Function to merge the two arrays using the spread operator
+  function mergeFruitArrays() {
+    // Merge the two arrays
+    const mergedFruits = [...fruits1, ...fruits2];
+
+    // Display the merged array
+    document.getElementById("merged-fruits").textContent = `Merged Fruits: ${mergedFruits.join(", ")}`;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Shopping Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .cart-item {
+      margin: 10px 0;
+    }
+    #cart {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Shopping Cart</h1>
+
+<div id="items">
+  <div class="cart-item">
+    <p>Item 1 - $10.00</p>
+    <button onclick="addItem('Item 1', 10)">Add to Cart</button>
+  </div>
+  <div class="cart-item">
+    <p>Item 2 - $20.00</p>
+    <button onclick="addItem('Item 2', 20)">Add to Cart</button>
+  </div>
+  <div class="cart-item">
+    <p>Item 3 - $15.00</p>
+    <button onclick="addItem('Item 3', 15)">Add to Cart</button>
+  </div>
+</div>
+
+<div id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p id="total-price">Total Price: $0.00</p>
+</div>
+
+<script>
+  const TAX_RATE = 0.08;  // 8% tax rate
+  let totalPrice = 0;  // This will hold the total price with tax
+  var cart = [];       // List of items in the cart
+
+  function addItem(name, price) {
+    // Add the item to the cart
+    cart.push({ name, price });
+    
+    // Update total price
+    totalPrice += price + (price * TAX_RATE);
+    
+    // Display cart items and total
+    displayCart();
+  }
+
+  function displayCart() {
+    const cartItemsElement = document.getElementById("cart-items");
+    cartItemsElement.innerHTML = '';  // Clear current items
+    
+    cart.forEach((item) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+      cartItemsElement.appendChild(listItem);
+    });
+
+    document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+  }
+</script>
+
+</body>
+</html>

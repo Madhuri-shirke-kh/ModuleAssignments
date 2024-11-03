@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      width: 80%;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Book Details</h1>
+
+<label for="title">Title:</label>
+<input type="text" id="title" placeholder="Enter book title">
+
+<label for="author">Author:</label>
+<input type="text" id="author" placeholder="Enter author name">
+
+<label for="year">Year Published:</label>
+<input type="number" id="year" placeholder="Enter year published">
+
+<button onclick="displayBookDetails()">Show Book Details</button>
+
+<p id="book-details">Book Details:</p>
+
+<script>
+  // Book object with properties and a method to display details
+  const book = {
+    title: '',
+    author: '',
+    yearPublished: 0,
+
+    // Method to display the book details
+    displayDetails() {
+      return `Title: ${this.title}, Author: ${this.author}, Year Published: ${this.yearPublished}`;
+    }
+  };
+
+  // Function to update the book object and display its details
+  function displayBookDetails() {
+    // Get values from input fields
+    book.title = document.getElementById("title").value;
+    book.author = document.getElementById("author").value;
+    book.yearPublished = parseInt(document.getElementById("year").value, 10);
+
+    // Check if the values are valid
+    if (!book.title || !book.author || isNaN(book.yearPublished) || book.yearPublished <= 0) {
+      document.getElementById("book-details").textContent = "Please enter valid book details.";
+      return;
+    }
+
+    // Display the book details using the displayDetails method
+    document.getElementById("book-details").textContent = `Book Details: ${book.displayDetails()}`;
+  }
+</script>
+
+</body>
+</html>

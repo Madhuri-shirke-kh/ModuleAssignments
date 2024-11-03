@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Total Price Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Shopping Cart Total</h1>
+
+<button onclick="calculateTotalPrice()">Calculate Total Price</button>
+
+<p id="total-price">Total Price: </p>
+
+<script>
+  // Array representing items in a shopping cart with their prices
+  const cart = [
+    { item: 'Apple', price: 1.2 },
+    { item: 'Banana', price: 0.8 },
+    { item: 'Milk', price: 2.5 },
+    { item: 'Bread', price: 1.5 }
+  ];
+
+  // Function to calculate the total price using reduce
+  function calculateTotalPrice() {
+    // Use reduce to calculate the sum of all prices in the cart
+    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
+    // Display the total price
+    document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+  }
+</script>
+
+</body>
+</html>

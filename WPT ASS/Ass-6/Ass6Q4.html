@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Car Details</h1>
+
+<button onclick="showCarDetails()">Show Car Details</button>
+
+<p id="car-details">Car Details:</p>
+
+<script>
+  // Car object with properties
+  const car = {
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
+    color: 'Red'
+  };
+
+  // Function to display car details using object destructuring
+  function showCarDetails() {
+    // Destructure properties from the car object
+    const { make, model, year, color } = car;
+
+    // Display the car details
+    document.getElementById("car-details").textContent = `Car Details: Make - ${make}, Model - ${model}, Year - ${year}, Color - ${color}`;
+  }
+</script>
+
+</body>
+</html>

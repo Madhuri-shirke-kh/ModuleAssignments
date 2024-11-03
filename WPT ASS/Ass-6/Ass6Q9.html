@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      width: 80%;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Sum Calculator</h1>
+
+<label for="numbers">Enter numbers (comma separated):</label>
+<input type="text" id="numbers" placeholder="e.g., 10, 20, 30">
+
+<button onclick="calculateSum()">Calculate Sum</button>
+
+<p id="sum-result">Sum: </p>
+
+<script>
+  // Function that takes any number of arguments and returns their sum
+  function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+  }
+
+  // Function to get input values, parse them, and calculate the sum
+  function calculateSum() {
+    // Get the input and split into an array of numbers
+    const input = document.getElementById("numbers").value;
+    const numbersArray = input.split(',').map(Number); // Convert input to an array of numbers
+
+    // Calculate the sum using the sum function with the rest operator
+    const result = sum(...numbersArray);
+
+    // Display the result
+    document.getElementById("sum-result").textContent = `Sum: ${result}`;
+  }
+</script>
+
+</body>
+</html>

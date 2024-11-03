@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Destructuring</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Array Destructuring Example</h1>
+
+<button onclick="showFirstTwoNumbers()">Show First Two Numbers</button>
+
+<p id="result">First Two Numbers:</p>
+
+<script>
+  // Array of numbers
+  const numbers = [10, 20, 30, 40, 50];
+
+  // Function to extract and display the first two numbers using array destructuring
+  function showFirstTwoNumbers() {
+    // Destructure the first two elements from the numbers array
+    const [first, second] = numbers;
+
+    // Display the first two numbers
+    document.getElementById("result").textContent = `First Two Numbers: ${first}, ${second}`;
+  }
+</script>
+
+</body>
+</html>

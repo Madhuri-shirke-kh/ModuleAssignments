@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rectangle Area Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      width: 80%;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+    }
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Rectangle Area Calculator</h1>
+
+<label for="length">Length:</label>
+<input type="number" id="length" placeholder="Enter length">
+
+<label for="width">Width:</label>
+<input type="number" id="width" placeholder="Enter width">
+
+<button onclick="calculateArea()">Calculate Area</button>
+
+<p id="area-result">Area: </p>
+
+<script>
+  // Regular function to calculate area of rectangle
+  function calculateAreaRegular(length, width) {
+    return length * width;
+  }
+
+  // Arrow function to calculate area of rectangle
+  const calculateAreaArrow = (length, width) => length * width;
+
+  // Function to get user input and display the area
+  function calculateArea() {
+    const length = parseFloat(document.getElementById("length").value);
+    const width = parseFloat(document.getElementById("width").value);
+
+    if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+      document.getElementById("area-result").textContent = "Please enter valid dimensions.";
+      return;
+    }
+
+    // Calculate area using both methods
+    const areaRegular = calculateAreaRegular(length, width);
+    const areaArrow = calculateAreaArrow(length, width);
+
+    // Display the area
+    document.getElementById("area-result").textContent = `Area (Regular): ${areaRegular}, Area (Arrow): ${areaArrow}`;
+  }
+</script>
+
+</body>
+</html>
